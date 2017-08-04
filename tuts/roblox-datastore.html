@@ -1,4 +1,10 @@
 <html>
+	<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, height=device-height, user-scalable=no, inital-scale=1.0">
+	<title>Saving Data in ROBLOX - A quick guide.</title>
+	<link rel="stylesheet" type="text/css" href="../style.css">
+</head>
 <body>
 
 <h1>Saving Data in ROBLOX - A quick guide.</h1>
@@ -8,18 +14,18 @@
 <h2>What's DataStore and why do I care?</h2>
 	
 <p>In ROBLOX and game development, you will often find you want to have persistent data about the player, or game in general. In ROBLOX, the main way to accomplish this through the DataStore Service.</p>
-http://wiki.roblox.com/index.php?title=API:Class/DataStoreService
+<a href="http://wiki.roblox.com/index.php?title=API:Class/DataStoreService">http://wiki.roblox.com/index.php?title=API:Class/DataStoreService</a>
+<br>
+<sub>NOTE: Data Persistance is the predecessor of DataStore, it is quite old, and deprecated. If you find yourself with a game using Data Persistance, I recommend converting to DataStore.<sub>
 
-NOTE: Data Persistance is the predecessor of DataStore, it is quite old, and deprecated. If you find yourself with a game using Data Persistance, I recommend converting to DataStore.
-
-DataStore is often misunderstood and incorrectly used by newer scripters, but it's really quite simple and nothing to be scared of. Each "game" (Universe, if you prefer) in ROBLOX has shared DataStore, a common misconception being that each place has it's own DataStores, or that they're shared across all ROBLOX games.
+<p>DataStore is often misunderstood and incorrectly used by newer scripters, but it's really quite simple and nothing to be scared of. Each "game" (Universe, if you prefer) in ROBLOX has shared DataStore, a common misconception being that each place has it's own DataStores, or that they're shared across all ROBLOX games.</p>
 
 <h2> How's it work?</h2>
 
-To access a DataStore, you call the `GetDataStore(name, scope)` method of DataStoreService. It returns a datastore with that given name and scope. Scope will default to `"global"` if not specified.
-http://wiki.roblox.com/index.php?title=API:Class/GlobalDataStore
+<p>To access a DataStore, you call the `GetDataStore(name, scope)` method of DataStoreService. It returns a datastore with that given name and scope. Scope will default to `"global"` if not specified.</p>
+<a href="http://wiki.roblox.com/index.php?title=API:Class/GlobalDataStore">http://wiki.roblox.com/index.php?title=API:Class/GlobalDataStore</a>
 
-Once you've grabbed your DataStore, you can read and write to it using the `GetAsync`, `SetAsync`, `IncrementAsync` and `UpdateAsync` methods. These are all pretty self-explainatory.
+<p>Once you've grabbed your DataStore, you can read and write to it using the `GetAsync`, `SetAsync`, `IncrementAsync` and `UpdateAsync` methods. These are all pretty self-explainatory.</p>
 
 <h2>Example One: Saving a number</h2>
 This first example should be run in a Script on the server (Preferably ServerScriptService). To start we just grab the service and a DataStore that we want.
