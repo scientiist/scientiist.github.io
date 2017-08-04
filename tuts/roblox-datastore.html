@@ -29,22 +29,29 @@
 
 	<p>Once you've grabbed your DataStore, you can read and write to it using the <code>GetAsync</code>, <code>SetAsync</code>, <code>IncrementAsync</code> and <code>UpdateAsync</code> methods. These are all pretty self-explainatory.</p>
 
-<h2>Example One: Saving a number</h2>
-<p>This first example should be run in a Script on the server (Preferably ServerScriptService). To start we just grab the service and a DataStore that we want.</p>
-
-<img src="images/datastore_1.png"></img>
+	<h2>Example One: Saving a number</h2>
+	
+	<p>This first example should be run in a Script on the server (Preferably ServerScriptService). To start we just grab the service and a DataStore that we want.</p>
+	<img src="images/datastore_1.png"></img>
 
 	<p>Next we are going to use GetAsync to grab a specific number from our DataStore.</p>
-
 	<img src="images/datastore_2.png"></img>
 
 
-<p><b>NOTE:</b> If a key in a DataStore has never been set before, it will return <code>nil</code>.</p>
-<img src="images/datastore_3.png"></img>
+	<p><b>NOTE:</b> If a key in a DataStore has never been set before, it will return <code>nil</code>.</p>
+	<img src="images/datastore_3.png"></img>
 
-<p>After this, we're going to send <code>myNum</code> back into the DataStore.</p>
+	<p>After this, we're going to send <code>myNum</code> back into the DataStore.</p>
+	<img src="images/datastore_4.png"></img>
 
-<img src="images/datastore_4.png"></img>
+	<p>Play with this example if you like, output the result to a Billboard or something</p>
+	
+	<h2>Example Two: Counting player join times.</h2>
 
+	<p>Hopefully you're a little more comfortable with DataStores at this point, so we're going to try something a bit more involved.</p>
+		
+	<h2>OrderedDataStore</h2>
+
+	<p>OrderedDataStore is a service similar to DataStore, but is different in that it only stores numbers, and is automatically sorted. At this current time of revision I don't actually know how ODS works, I plan on fleshing out this part of the tutorial later on</p>
 </body>
 </html>
