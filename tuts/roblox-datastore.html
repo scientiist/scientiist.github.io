@@ -4,9 +4,11 @@
 	<meta name="viewport" content="width=device-width, height=device-height, user-scalable=no, inital-scale=1.0">
 	<title>Saving Data in ROBLOX - A quick guide.</title>
 	<link rel="stylesheet" type="text/css" href="../style.css">
+	<link href="../prism.css" rel="stylesheet">
+	
 </head>
 <body>
-
+	<script src="prism.js"></script>
 	<h1>Saving Data in ROBLOX - A quick guide.</h1>
 
 	<p>If you find an issue or mistake, please PM me on ROBLOX (MadScient1st), Twitter (@scientiist), or Discord (MadScientist#6277)</p>
@@ -52,13 +54,13 @@
 	<p>We'll start off this tutorial with some boilerplate that doesn't have much to do with the actual DataStore</p>	
 	
 	<p>First up is a function <code>join</code> that we connect to the PlayerAdded event.</p>
-	<code>
+	<pre><code class="language-lua">
 	local function join(player)
 		
 	end
 		
 	game.Players.PlayerAdded:Connect(join)
-	</code>
+	</code></pre>
 
 	<p>The rest of this example will occur inside of <code>join</code> </p>
 	<h2>OrderedDataStore</h2>
