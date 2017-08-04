@@ -25,32 +25,24 @@
 <p>To access a DataStore, you call the `GetDataStore(name, scope)` method of DataStoreService. It returns a datastore with that given name and scope. Scope will default to `"global"` if not specified.</p>
 <a href="http://wiki.roblox.com/index.php?title=API:Class/GlobalDataStore">http://wiki.roblox.com/index.php?title=API:Class/GlobalDataStore</a>
 
-<p>Once you've grabbed your DataStore, you can read and write to it using the `GetAsync`, `SetAsync`, `IncrementAsync` and `UpdateAsync` methods. These are all pretty self-explainatory.</p>
+	<p>Once you've grabbed your DataStore, you can read and write to it using the <code>GetAsync</code>, <code>SetAsync</code>, <code>IncrementAsync</code> and <code>UpdateAsync</code> methods. These are all pretty self-explainatory.</p>
 
 <h2>Example One: Saving a number</h2>
-This first example should be run in a Script on the server (Preferably ServerScriptService). To start we just grab the service and a DataStore that we want.
+<p>This first example should be run in a Script on the server (Preferably ServerScriptService). To start we just grab the service and a DataStore that we want.</p>
 
-```lua
-local dss = game:GetService("DataStoreService")
-local myDS = dss:GetDataStore("numbers")
-```
-Next we are going to use GetAsync to grab a specific number from our DataStore.
+<img src="http://i.imgur.com/Xqn6phU.png"></img>
 
-```lua
-local myNum = myDS:GetAsync("firstNumber") -- this is the key that will be searched for in our DataStore
-```
+	<p>Next we are going to use GetAsync to grab a specific number from our DataStore.</p>
 
-NOTE: If a key in a DataStore has never been set before, it will return `nil`.
-```lua
-if myNum == nil then
-	myNum = 0
-end
-```
+	<img src="http://i.imgur.com/xkGBJHB.png"></img>
 
-After this, we're going to send `myNum` back into the DataStore.
 
-```lua
-myDS:SetAsync("firstNumber", myNum+1) -- we're going to increase myNum each time to see the DS work 
-```
+<p><b>NOTE:</b> If a key in a DataStore has never been set before, it will return <code>nil</code>.</p>
+<img src="http://i.imgur.com/Eavmmw0.png"></img>
+
+<p>After this, we're going to send `myNum` back into the DataStore.</p>
+
+<img src="http://i.imgur.com/G2HREuC.png"></img>
+
 </body>
 </html>
