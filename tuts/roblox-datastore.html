@@ -1,0 +1,40 @@
+Saving Data in ROBLOX - A quick guide.
+
+Disclaimer: This is not intented to be some end-all-be-all book of knowledge or what have you. I'm simply attempting to supply less-skilled scripters with some explanations and examples on the topic.
+
+In ROBLOX and game development, you will often find you want to have persistent data about the player, or game in general. In ROBLOX, the main way to accomplish this through the DataStore Service.
+http://wiki.roblox.com/index.php?title=API:Class/DataStoreService
+
+NOTE: Data Persistance is the predecessor of DataStore, it is quite old, and deprecated. If you find yourself with a game using Data Persistance, I recommend converting to DataStore.
+
+DataStore is often misunderstood and incorrectly used by newer scripters, but it's really quite simple and nothing to be scared of. Each "game" (Universe, if you prefer) in ROBLOX has shared DataStore, a common misconception being that each place has it's own DataStores, or that they're shared across all ROBLOX games.
+
+To access a DataStore, you call the `GetDataStore(name, scope)` method of DataStoreService. It returns a datastore with that given name and scope. Scope will default to `"global"` if not specified.
+http://wiki.roblox.com/index.php?title=API:Class/GlobalDataStore
+
+Once you've grabbed your DataStore, you can read and write to it using the `GetAsync`, `SetAsync`, `IncrementAsync` and `UpdateAsync` methods. These are all pretty self-explainatory.
+
+This first example should be run in a Script on the server (Preferably ServerScriptService). To start we just grab the service and a DataStore that we want.
+
+```lua
+local dss = game:GetService("DataStoreService")
+local myDS = dss:GetDataStore("numbers")
+```
+Next we are going to use GetAsync to grab a specific number from our DataStore.
+
+```lua
+local myNum = myDS:GetAsync("firstNumber") -- this is the key that will be searched for in our DataStore
+```
+
+NOTE: If a key in a DataStore has never been set before, it will return `nil`.
+```lua
+if myNum == nil then
+	myNum = 0
+end
+```
+
+After this, we're going to send `myNum` back into the DataStore.
+
+```lua
+myDS:SetAsync("firstNumber", myNum+1) -- we're going to increase myNum each time to see the DS work 
+```
