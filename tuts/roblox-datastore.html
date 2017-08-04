@@ -23,9 +23,9 @@
 	
 	<p><b>NOTE:</b> Data Persistance is the predecessor of DataStore, it is quite old, and deprecated. If you find yourself with a game using Data Persistance, I recommend converting to DataStore.</p>
 
-	<p>DataStore is often misunderstood and incorrectly used by newer scripters, but it's really quite simple and nothing to be scared of. Each "game" (Universe, if you prefer) in ROBLOX has shared DataStore, a common misconception being that each place has it's own DataStores, or that they're shared across all ROBLOX games.</p>
 
 	<h2> How's it work?</h2>
+	<p>DataStore is often misunderstood and incorrectly used by newer scripters, but it's really quite simple and nothing to be scared of. Each "game" (Universe, if you prefer) in ROBLOX has shared DataStore, a common misconception being that each place has it's own DataStores, or that they're shared across all ROBLOX games.</p>
 
 	<p>To access a DataStore, you call the <code>GetDataStore(name, scope)</code> method of DataStoreService. It returns a datastore with that given name and scope. Scope will default to <code>"global"</code> if not specified.</p>
 	<a href="http://wiki.roblox.com/index.php?title=API:Class/GlobalDataStore">http://wiki.roblox.com/index.php?title=API:Class/GlobalDataStore</a>
@@ -83,6 +83,15 @@ print(timesJoined)
 myDS:SetAsync(key, timesJoined+1)</code></pre>
 	
 	<p>If all works fine, you'll now see the number of times the player has previously played this game in the console when they join</p> 
+	
+	<h2>Some Exercises</h2>
+	<p>Now that you're familiar with DataStore, I encourage you to try some of the below exercises and see what you can make</p>
+	<ul>
+		<li>Save/Load leaderstats (Kills, WO's, etc)</li>
+		<li>Keep track of time spent in-game</li>
+		<li>Keep track of who a player has touched</li>
+		<li>Save/Load player's location.</li>
+	</ul>
 	
 	<h2>OrderedDataStore</h2>
 
