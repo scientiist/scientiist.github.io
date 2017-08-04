@@ -10,7 +10,7 @@
 <body>
 	<script src="../prism.js"></script>
 	<h1>Saving Data in ROBLOX - A quick guide.</h1>
-
+	<sub>Last Updated August 4, 2017</sub>
 	<p>If you find an issue or mistake, please PM me on ROBLOX (MadScient1st), Twitter (@scientiist), or Discord (MadScientist#6277)</p>
 
 	<h3>Disclaimer: This is not intented to be some end-all-be-all book of knowledge or what have you. I'm simply attempting to supply less-skilled scripters with some explanations and examples on the topic.</h3>
@@ -93,6 +93,14 @@ myDS:SetAsync(key, timesJoined+1)</code></pre>
 	
 	<h4>Cannot write to DataStore from studio if API access is not enabled.</h4>
 	<p>By default, studio API access is disabled, but you can enable it in the Configure Game page</p>
-	<a>http://wiki.roblox.com/index.php?title=Data_store#Using_Data_Stores_in_Studio</a>
+	<a href="http://wiki.roblox.com/index.php?title=Data_store#Using_Data_Stores_in_Studio">http://wiki.roblox.com/index.php?title=Data_store#Using_Data_Stores_in_Studio</a>
+
+	<h4>Cannot save instance</h4>
+	<p>As previously stated, DataStore is incapable of saving instances (ROBLOX objects such as parts and scripts). Check your code to make sure that you're not accidentally attempting to save an instance</p>
+
+	<h4>DataStore is throttling and not accepting my requests</h4>
+	<p>This can happen when you over-use DataStore, and ROBLOX automatically throttles the service. Try to find any places in your code where you're using DataStore much more than you should (a fast-running loop, or changing the player's DataStore every time their stats update are common mistakes). You should develop your game to attempt data-saving a few times, and handle it appropriately if it cannot.</p>
+
+	
 </body>
 </html>
