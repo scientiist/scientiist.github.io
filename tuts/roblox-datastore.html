@@ -7,7 +7,9 @@
 </head>
 <body>
 
-<h1>Saving Data in ROBLOX - A quick guide.</h1>
+	<h1>Saving Data in ROBLOX - A quick guide.</h1>
+
+	<p>If you find an issue or mistake, please PM me on ROBLOX (MadScient1st), Twitter (@scientiist), or Discord (MadScientist#6277)</p>
 
 <h3>Disclaimer: This is not intented to be some end-all-be-all book of knowledge or what have you. I'm simply attempting to supply less-skilled scripters with some explanations and examples on the topic.</h3>
 
@@ -22,7 +24,7 @@
 
 <h2> How's it work?</h2>
 
-<p>To access a DataStore, you call the `GetDataStore(name, scope)` method of DataStoreService. It returns a datastore with that given name and scope. Scope will default to `"global"` if not specified.</p>
+	<p>To access a DataStore, you call the <code>GetDataStore(name, scope)</code> method of DataStoreService. It returns a datastore with that given name and scope. Scope will default to <code>"global"</code> if not specified.</p>
 <a href="http://wiki.roblox.com/index.php?title=API:Class/GlobalDataStore">http://wiki.roblox.com/index.php?title=API:Class/GlobalDataStore</a>
 
 	<p>Once you've grabbed your DataStore, you can read and write to it using the <code>GetAsync</code>, <code>SetAsync</code>, <code>IncrementAsync</code> and <code>UpdateAsync</code> methods. These are all pretty self-explainatory.</p>
@@ -30,19 +32,19 @@
 <h2>Example One: Saving a number</h2>
 <p>This first example should be run in a Script on the server (Preferably ServerScriptService). To start we just grab the service and a DataStore that we want.</p>
 
-<img src="http://i.imgur.com/Xqn6phU.png"></img>
+<img src="images/datastore_1.png"></img>
 
 	<p>Next we are going to use GetAsync to grab a specific number from our DataStore.</p>
 
-	<img src="http://i.imgur.com/xkGBJHB.png"></img>
+	<img src="images/datastore_2.png"></img>
 
 
 <p><b>NOTE:</b> If a key in a DataStore has never been set before, it will return <code>nil</code>.</p>
-<img src="http://i.imgur.com/Eavmmw0.png"></img>
+<img src="images/datastore_3.png"></img>
 
-<p>After this, we're going to send `myNum` back into the DataStore.</p>
+<p>After this, we're going to send <code>myNum</code> back into the DataStore.</p>
 
-<img src="http://i.imgur.com/G2HREuC.png"></img>
+<img src="images/datastore_4.png"></img>
 
 </body>
 </html>
