@@ -34,17 +34,17 @@
 	<h2>Example One: Saving a number</h2>
 	
 	<p>This first example should be run in a Script on the server (Preferably ServerScriptService). To start we just grab the service and a DataStore that we want.</p>
-	<pre><code class="language-lua">local dss = game:GetService("DataStoreService")
-	local myDS = dss:GetDataStore("numbers")</code></pre>
+<pre><code class="language-lua">local dss = game:GetService("DataStoreService")
+local myDS = dss:GetDataStore("numbers")</code></pre>
 	<p>Next we are going to use GetAsync to grab a specific number from our DataStore.</p>
-	<pre><code class="language-lua">local myNum = myDS:GetAsync("number1")</code></pre>
+<pre><code class="language-lua">local myNum = myDS:GetAsync("number1")</code></pre>
 
 	<p><b>NOTE:</b> If a key in a DataStore has never been set before, it will return <code>nil</code>.</p>
-	<pre><code class="language-lua">if myNum == nil then
-		myNum = 0	
-	end</code></pre>
+<pre><code class="language-lua">if myNum == nil then
+	myNum = 0	
+end</code></pre>
 	<p>After this, we're going to send <code>myNum</code> back into the DataStore.</p>
-	<pre><code class="language-lua">myDS:SetAsync("number1", myNum+1) -- increase myNum so we can see the difference</code></pre>
+<pre><code class="language-lua">myDS:SetAsync("number1", myNum+1) -- increase myNum so we can see the difference</code></pre>
 
 	<p>Play with this example if you like, output the result to a Billboard or something</p>
 	
@@ -54,11 +54,11 @@
 	<p>We'll start off this tutorial with some boilerplate that doesn't have much to do with the actual DataStore</p>	
 	
 	<p>First up is a function <code>join</code> that we connect to the PlayerAdded event.</p>
-	<pre><code class="language-lua">local function join(player)
+<pre><code class="language-lua">local function join(player)
+	
+end
 		
-	end
-		
-	game.Players.PlayerAdded:Connect(join)</code></pre>
+game.Players.PlayerAdded:Connect(join)</code></pre>
 
 	<p>The rest of this example will occur inside of <code>join</code> </p>
 	<h2>OrderedDataStore</h2>
