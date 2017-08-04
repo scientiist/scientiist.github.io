@@ -34,25 +34,25 @@
 	<h2>Example One: Saving a number</h2>
 	
 	<p>This first example should be run in a Script on the server (Preferably ServerScriptService). To start we just grab the service and a DataStore that we want.</p>
-	<code class="language-lua">
+	<pre><code class="language-lua">
 	local dss = game:GetService("DataStoreService")
 	local myDS = dss:GetDataStore("numbers")
-	</code>
+	</code></pre>
 	<p>Next we are going to use GetAsync to grab a specific number from our DataStore.</p>
-	<code class="language-lua">
+	<pre><code class="language-lua">
 	local myNum = myDS:GetAsync("number1")
-	</code>
+	</code></pre>
 
 	<p><b>NOTE:</b> If a key in a DataStore has never been set before, it will return <code>nil</code>.</p>
-	<code class="language-lua">
+	<pre><code class="language-lua">
 	if myNum == nil then
 		myNum = 0	
 	end
-	</code>
+	</code></pre>
 	<p>After this, we're going to send <code>myNum</code> back into the DataStore.</p>
-	<code class="language-lua">
+	<pre><code class="language-lua">
 	myDS:SetAsync("number1", myNum+1) -- increase myNum so we can see the difference
-	</code>
+	</code></pre>
 
 	<p>Play with this example if you like, output the result to a Billboard or something</p>
 	
