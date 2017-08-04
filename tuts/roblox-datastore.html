@@ -18,9 +18,10 @@
 	<h2>What's DataStore and why do I care?</h2>
 	
 	<p>In ROBLOX and game development, you will often find you want to have persistent data about the player, or game in general. In ROBLOX, the main way to accomplish this through the DataStore Service.</p>
+	
 	<a href="http://wiki.roblox.com/index.php?title=API:Class/DataStoreService">http://wiki.roblox.com/index.php?title=API:Class/DataStoreService</a>
-	<br>
-	<b>NOTE:</b> Data Persistance is the predecessor of DataStore, it is quite old, and deprecated. If you find yourself with a game using Data Persistance, I recommend converting to DataStore.
+	
+	<p><b>NOTE:</b> Data Persistance is the predecessor of DataStore, it is quite old, and deprecated. If you find yourself with a game using Data Persistance, I recommend converting to DataStore.</p>
 
 	<p>DataStore is often misunderstood and incorrectly used by newer scripters, but it's really quite simple and nothing to be scared of. Each "game" (Universe, if you prefer) in ROBLOX has shared DataStore, a common misconception being that each place has it's own DataStores, or that they're shared across all ROBLOX games.</p>
 
@@ -30,7 +31,10 @@
 	<a href="http://wiki.roblox.com/index.php?title=API:Class/GlobalDataStore">http://wiki.roblox.com/index.php?title=API:Class/GlobalDataStore</a>
 
 	<p>Once you've grabbed your DataStore, you can read and write to it using the <code>GetAsync</code>, <code>SetAsync</code>, <code>IncrementAsync</code> and <code>UpdateAsync</code> methods. These are all pretty self-explainatory.</p>
-
+	
+	<p>Keep in mind that DataStore has several limitations. Because of these, it is recommended to use DataStore rather infrequently. Generally you will see games that load and save data when the player leaves and joins, and/or autosaving at 5-10 minute intervals.</p>
+	
+	<a href="http://wiki.roblox.com/index.php?title=Data_store#Limitations">http://wiki.roblox.com/index.php?title=Data_store#Limitations</a>
 	<h2>Example One: Saving a number</h2>
 	
 	<p>This first example should be run in a Script on the server (Preferably ServerScriptService). To start we just grab the service and a DataStore that we want.</p>
@@ -50,17 +54,36 @@ end</code></pre>
 	
 	<h2>Example Two: Counting player join times.</h2>
 
-	<p>Hopefully you're a little more comfortable with DataStores at this point, so we're going to try something a bit more involved.</p>
-	<p>We'll start off this tutorial with some boilerplate that doesn't have much to do with the actual DataStore</p>	
+	<p>Hopefully you're a little more comfortable with DataStores at this point, so we're going to try something a bit more involved. We'll start off this tutorial with some boilerplate that doesn't have much to do with the actual DataStore</p>	
 	
 	<p>First up is a function <code>join</code> that we connect to the PlayerAdded event.</p>
-<pre><code class="language-lua">local function join(player)
+
+<pre><code class="language-lua">-- Server Script
+local dss = game:GetService("DataStoreService")
+local myDS = dss:GetDataStore("joins")
+
+local function join(player)
 	
 end
 		
 game.Players.PlayerAdded:Connect(join)</code></pre>
 
-	<p>The rest of this example will occur inside of <code>join</code> </p>
+	<p>The rest of this example will occur inside of <code>join</code>.  Once our boilerplate is set up, we're going to grab the player's join times when they join, increase it, and send it back to the DataStore.</p>
+	
+<pre><code class="language-lua">local key = "plr"..player.UserId -- we create a string "key" to store the player's data by userId
+-- this is good practice, as if the player changes name, the data remains
+local timesJoined = myDS:GetAsync(key)
+
+-- then we do the normal checks
+if timesJoined == nil then timesJoined = 0 end
+
+print(timesJoined)
+
+-- after that, we'll send it back to the DataStore
+myDS:SetAsync(key, timesJoined+1)</code></pre>
+	
+	<p>If all works fine, you'll now see the number of times the player has previously played this game in the console when they join</p> 
+	
 	<h2>OrderedDataStore</h2>
 
 	<p>OrderedDataStore is a service similar to DataStore, but is different in that it only stores numbers, and is automatically sorted. At this current time of revision I don't actually know how ODS works, I plan on fleshing out this part of the tutorial later on</p>
