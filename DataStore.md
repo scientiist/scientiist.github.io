@@ -1,3 +1,8 @@
+# a
+## b
+### c
+#### d
+
 ### DataStore: A Quick Guide.
 
 Last Updated March 2, 2018
@@ -32,7 +37,7 @@ local ourNumber = someDataStore:GetAsync("OurNumber")
 print(ourNumber)
 ```
 
-##The Limitations
+## The Limitations
 
 DataStore has some limits that you need to be aware of, and can avoid. I'll cover a few of the more common ones here. Unlike DataPersistence, you cannot store Instances. According to the wiki: "
 Values must be one of the following: float, boolean, interger, a utf-8 String", meaning that you can't directly save things like Parts, Vector3's, etc. This is actually a very good thing when you think about it, why would you want to save the instance directly? Instead, save "defining" information about the instance. 
