@@ -1,9 +1,4 @@
-# a
-## b
-### c
-#### d
-
-### DataStore: A Quick Guide.
+# DataStore: A Quick Guide.
 
 Last Updated March 2, 2018
 
