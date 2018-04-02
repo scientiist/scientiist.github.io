@@ -1,4 +1,4 @@
-DataStore: A Quick Guide.
+### DataStore: A Quick Guide.
 
 Last Updated March 2, 2018
 
@@ -9,13 +9,13 @@ Before we start, please note that this tutorial assumes previous Lua scripting c
 
 With that out of the way, let's get started.
 
-##What is DataStore?
+## What is DataStore?
 
 In your game, you may find yourself wanting to save information, such as a player's statistics, between play sessions. In the old days, this could be accomplished using what was called DataPersistence. 
 
-However, ROBLOX now has the DataStore Service, which has replaced the depricated DataPersistence. DataStore has a number of advantages, such as information not being "bound" to individual players, (DataPersistence functions were exposed through the player, i.e `player:SaveString(), player:LoadInstance(), etc.), and data being shared across all places of a Game (Universe).
+However, ROBLOX now has the DataStore Service, which has replaced the depricated DataPersistence. DataStore has a number of advantages, such as information not being "bound" to individual players, (DataPersistence functions were exposed through the player, i.e `player:SaveString(), player:LoadInstance(), etc.`), and data being shared across all places of a Game (Universe).
 
-##How does it work?
+## How does it work?
 
 DataStore is essentially a database for your game, made easy to use via the ROBLOX API. You use the DataStoreService to grab GlobalDataStores and OrderedDataStores, which you use to read and write information that will be preserved. 
 
@@ -41,27 +41,27 @@ As an example, if you wanted to save the items in a player's backpack: instead o
 
 Another common mistake is trying to save a table with mixed indices
 
-##DataStore's errors
+## DataStore's errors
 
 
-##Example 1:
+## Example 1:
 
 This one will start off simple, I'll just be demonstrating how to set up DataStore, and we'll be keeping track of whether or not a player is new to the game.
 
 
-##Example 2: 
+## Example 2: 
 This one should be a little more fun. We are going to save and load the player's position.
 
 
-##OrderedDataStore
+## OrderedDataStore
 
 
-----
-##ROBLOX APIs used in this tutorial:
+--
+## ROBLOX APIs used in this tutorial:
 http://wiki.roblox.com/index.php?title=API:Class/OrderedDataStore
 http://wiki.roblox.com/index.php?title=API:Class/GlobalDataStore
 http://wiki.roblox.com/index.php?title=API:Class/DataStoreService
 
 
-##Useful Reading:
+## Useful Reading:
 http://wiki.roblox.com/index.php?title=Datastore_Errors
