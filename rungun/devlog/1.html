@@ -11,10 +11,36 @@
     
 <body>
 	<script src="/prism/prism.js"></script>
-    <h1>Devlog 0 - </h1>
+    <h1>Devlog 1 - Map Editor</h1><h3>20th of April, 2020</h3>
     <a href="/rungun/devlog/0.html">last devlog</a> <a href="/rungun/devlog/2.html">next devlog</a> 
-	<p>aaaaa</p>
-    </code>
-    </pre>
+    <p>One design challenge i've ran into is needing to have connection between WPF Forms and Monogame. The challenge is needing to design a class to work across the two systems.</p>
+    <p>To achieve this, i've split the editor's contract between two interfaces, with the added benefit of helping organization.</p>
+    <pre><code class="language-c">
+public interface IEditor { }
+public interface IFormsEditor
+{
+    void FileSave(string file);
+    void FileNew();
+    void FileOpen(string file);
+    void EditUndo(int count = 1);
+    void EditRedo(int count = 1);
+    void EditDelete();
+    void InsertGeometry();
+    void OnMouseWheel(int delta);
+    void OnMouseMove(Vector2 vector);
+}
+public interface IViewModelEditor
+{
+    void Initialize();
+    void LoadContent();
+    void Update(float delta);
+    void Draw(GraphicsDevice gdev, SpriteBatch spriteBatch);
+    void OnActivated();
+    void OnDeactivated();
+    void OnExiting();
+    void SizeChanged();
+}
+    </code></pre>
+    
 </body>
 </html>
