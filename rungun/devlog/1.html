@@ -14,6 +14,8 @@
     <h1>Devlog 1 - Map Editor</h1><h3>20th of April, 2020</h3>
     <a href="/rungun/devlog/0.html">last devlog</a> <a href="/rungun/devlog/2.html">next devlog</a> 
     <p>One design challenge i've ran into is needing to have connection between WPF Forms and Monogame. The challenge is needing to design a class to work across the two systems.</p>
+    <p>The <code>MainWindow</code> class drives the Forms, while the <code>GraphicsWindow</code> drives MonoGame related activities. MainWindow contains event listeners that call editor methods for various tasks. GraphicsWindow acts as a surrogate MonoGame <code>Game</code> class, in which we do our standard rendering and game logic.</p>
+    
     <p>To achieve this, i've split the editor's contract between two interfaces, with the added benefit of helping organization.</p>
     <pre><code class="language-c">
 public interface IEditor { }
@@ -41,6 +43,21 @@ public interface IViewModelEditor
     void SizeChanged();
 }
     </code></pre>
-    
+    <p>With that set up, I use a static global class named <code>EditorRef</code> to contain a static reference to an editor class. This effectively makes a singleton, & later on I may refactor to reflect this better.</p>
+    <p>For now, it works, and I'm ready to get some functionality slapped into this thing.</p>
+
+    <h3>The Mouse</h3>
+    <p>Because of scaling the screen via Matrix class, i'll need to scale mouse coordinates as well.</p>
+    <p>Got that working, implemented in the <code>Camera</code> class.</p>
+
+    <h3>Editor Tools</h3>
+    <p>Up next, I think i'll start working out how I want to implement various tools for the editor. I don't need anything particularly fancy, but I'd like it to be decently extendable, in case the need ever arises.</p>
+    <h3>Sidetrack</h3>
+    <p>I ended up spending a good bit of time connecting the Dock buttons (File, Edit, etc.) to the editor. A custom Mouse class was created to handle the added confusion of WPF+MonoGame conveniently not supporting mouse functionality. Oh well.</p>
+    <p>The background grid also got some improvements, it no longers looks chunky when zoomed in.</p>
+    <p>Did some tests with dragging elements around in the gameworld. Feels good to use so far, so tomorrow I plan to implement the resize tool, and the color picker.</p>
+    <p>General refactoring is a good idea, since i'm just slapping all the functionality into <code>MapEditor</code></p>
+
+    <p>I'm done for the night. See you tomorrow.</p>
 </body>
 </html>
