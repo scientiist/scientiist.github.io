@@ -1,0 +1,327 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../../luadoc.css" type="text/css" />
+	<!--meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/-->
+</head>
+
+<body>
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+<div id="main">
+
+<div id="navigation">
+
+
+<h1>LuaDoc</h1>
+<ul>
+	
+	<li><a href="../../index.html">Index</a></li>
+	
+</ul>
+
+
+<!-- Module list -->
+
+
+
+<!-- File list -->
+
+<h1>Files</h1>
+<ul>
+
+	<li><strong>engine/BaseClass.lua</strong></li>
+	
+	<li>
+		<a href="../../files/engine/Importer.html">engine/Importer.lua</a>
+	</li>
+
+	<li>
+		<a href="../../files/engine/Lib/RotatedRegion3/GJK.html">engine/Lib/RotatedRegion3/GJK.lua</a>
+	</li>
+
+	<li>
+		<a href="../../files/engine/Lib/RotatedRegion3/Supports.html">engine/Lib/RotatedRegion3/Supports.lua</a>
+	</li>
+
+	<li>
+		<a href="../../files/engine/Lib/RotatedRegion3/Vertices.html">engine/Lib/RotatedRegion3/Vertices.lua</a>
+	</li>
+
+	<li>
+		<a href="../../files/engine/Lib/RotatedRegion3/init.html">engine/Lib/RotatedRegion3/init.lua</a>
+	</li>
+
+	<li>
+		<a href="../../files/engine/Lovecraft.html">engine/Lovecraft.lua</a>
+	</li>
+
+	<li>
+		<a href="../../files/engine/LuaUtils.html">engine/LuaUtils.lua</a>
+	</li>
+
+	<li>
+		<a href="../../files/engine/RigTesting.html">engine/RigTesting.lua</a>
+	</li>
+
+	<li>
+		<a href="../../files/engine/SoftWeld.html">engine/SoftWeld.lua</a>
+	</li>
+
+	<li>
+		<a href="../../files/engine/VRHand.html">engine/VRHand.lua</a>
+	</li>
+
+	<li>
+		<a href="../../files/engine/VRHead.html">engine/VRHead.lua</a>
+	</li>
+
+</ul>
+
+
+
+
+
+
+</div> <!-- id="navigation" -->
+
+<div id="content">
+
+<h1>File <code>engine/BaseClass.lua</code></h1>
+
+
+
+
+
+
+
+<h2>Functions</h2>
+<table class="function_list">
+
+	<tr>
+	<td class="name" nowrap><a href="#jutils.object:init">jutils.object:init</a>&nbsp;(...)</td>
+	<td class="summary">Instance creation callback, User defines class:init(...) and jutils calls it when class:new(...) is called.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#jutils.object:isA">jutils.object:isA</a>&nbsp;(objtype)</td>
+	<td class="summary">Returns true if object is of the specified type.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#jutils.object:new">jutils.object:new</a>&nbsp;(...)</td>
+	<td class="summary">Returns a new instance of the class.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#jutils.object:subclass">jutils.object:subclass</a>&nbsp;(classname)</td>
+	<td class="summary">Creates a subclass object that can be extended.</td>
+	</tr>
+
+</table>
+
+
+
+
+
+
+<br/>
+<br/>
+
+
+
+
+<h2><a name="functions"></a>Functions</h2>
+<dl class="function">
+
+
+
+<dt><a name="jutils.object:init"></a><strong>jutils.object:init</strong>&nbsp;(...)</dt>
+<dd>
+Instance creation callback, User defines class:init(...) and jutils calls it when class:new(...) is called.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>...</em></code>: 
+	</li>
+	
+</ul>
+
+
+
+
+<h3>Usage:</h3>
+<ul><pre class=example>function myClass:init(arg) self.property = arg end</pre></ul>
+
+
+
+
+
+<h3>See also:</h3>
+<ul>
+	
+	<!-- <li><a href="#../../files/engine/BaseClass.html#jutils.object:newjutils.object:new"> -->
+	<li><a href="#jutils.object:new">
+		jutils.object:new</li>
+	</a>
+	
+	<!-- <li><a href="#../../files/engine/BaseClass.html#jutils.object:subclassjutils.object:subclass"> -->
+	<li><a href="#jutils.object:subclass">
+		jutils.object:subclass</li>
+	</a>
+	
+</ul>
+
+</dd>
+
+
+
+
+<dt><a name="jutils.object:isA"></a><strong>jutils.object:isA</strong>&nbsp;(objtype)</dt>
+<dd>
+Returns true if object is of the specified type.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>objtype</em></code>: 
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>boolean</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="jutils.object:new"></a><strong>jutils.object:new</strong>&nbsp;(...)</dt>
+<dd>
+Returns a new instance of the class. Passes arguments to obj:init().
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>...</em></code>: 
+	</li>
+	
+</ul>
+
+
+
+
+<h3>Usage:</h3>
+<ul><pre class=example>local myInst = myClass:new(...)</pre></ul>
+
+
+
+
+
+<h3>See also:</h3>
+<ul>
+	
+	<!-- <li><a href="#../../files/engine/BaseClass.html#jutils.object:initjutils.object:init"> -->
+	<li><a href="#jutils.object:init">
+		jutils.object:init</li>
+	</a>
+	
+	<!-- <li><a href="#../../files/engine/BaseClass.html#jutils.object:subclassjutils.object:subclass"> -->
+	<li><a href="#jutils.object:subclass">
+		jutils.object:subclass</li>
+	</a>
+	
+</ul>
+
+</dd>
+
+
+
+
+<dt><a name="jutils.object:subclass"></a><strong>jutils.object:subclass</strong>&nbsp;(classname)</dt>
+<dd>
+Creates a subclass object that can be extended. Used for basic OOP.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>classname</em></code>: 
+	</li>
+	
+</ul>
+
+
+
+
+<h3>Usage:</h3>
+<ul><pre class=example>local myClass = jutils.obj:subclass("myclass")</pre></ul>
+
+
+
+<h3>Return value:</h3>
+<ul>object</ul>
+
+
+
+<h3>See also:</h3>
+<ul>
+	
+	<!-- <li><a href="#../../files/engine/BaseClass.html#jutils.object:initjutils.object:init"> -->
+	<li><a href="#jutils.object:init">
+		jutils.object:init</li>
+	</a>
+	
+	<!-- <li><a href="#../../files/engine/BaseClass.html#jutils.object:newjutils.object:new"> -->
+	<li><a href="#jutils.object:new">
+		jutils.object:new</li>
+	</a>
+	
+</ul>
+
+</dd>
+
+
+</dl>
+
+
+
+
+
+
+
+</div> <!-- id="content" -->
+
+</div> <!-- id="main" -->
+
+<div id="about">
+	<p><a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0!" height="31" width="88" /></a></p>
+</div> <!-- id="about" -->
+
+</div> <!-- id="container" -->	
+</body>
+</html>
