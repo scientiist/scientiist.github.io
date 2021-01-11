@@ -1,17 +1,64 @@
+<!DOCTYPE html>
 <html lang="en">
 
+<script type ="text/javascript" src = "site/includeHTML.js"> </script>
+
 <head>
-	<meta charset="utf-8">
-	<title>Joshuu's Site</title>
-	<meta name="description" content="epic">
+    <meta charset="utf-8">
+    <title>CaveGame</title>
+    <meta name="description" content="epic">
 	<meta name="author" content="joshuu">
 	<link rel="stylesheet" type="text/css" href="/style.css">
-	<link rel="stylesheet" type="text/css" href="/prism/prism.css">
+	<link rel="stylesheet" type="text/css" href="/prism/prism.css" >
+
+	<style>
+		.cave-image {
+    background-image: url('/cavegame/bg.png');
+    height: 100%;
+    float: left;
+    background-size:cover;
+    position: absolute;
+    width:100%;
+
+    
+}
+
+.cave-blur {
+    width:100%;
+    height:100%;
+    position: absolute;
+}
+.cave-content {
+    background-color: rgba(16, 16,16, 0.8);
+    font-weight: bold;
+    border-bottom: white solid;
+    position: absolute;
+
+    z-index: 2;
+    width: 100%;
+    padding: 20px;
+    text-align: left;
+}
+	</style>
+
 </head>
 
-<body>
-	<h1>Josh's site</h1>
-	<h3>Projects</h3>
-	<a href="/rungun/index.html">RunGun DevLogs</p>
+<body >
+	
+	<div class="cave-content">
+	<h1>CaveGame</h1>
+	
+
+	<h3>Downloads</h3>
+	<ul>
+		<li><p><a href="downloads/CaveGame2.3b.zip">CaveGame 2.3b.exe</a></p></li>
+		<li><p><a href="downloads/CaveServer2.3b.zip">CaveServerCLI 2.3b.exe</a> (Requires DOTNET 5.0)</p></li>
+		<li><p>Linux and MacOS builds coming soon! </p></li>
+	</ul>
+	<div w3-include-html="/site/contactlist.html"></div>
+	</div>
+	<div class="cave-image"></div>
+	<div class="cave-blur"></div></div>
 </body>
+<script>includeHTML();</script> 
 </html>
