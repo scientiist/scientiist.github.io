@@ -8,8 +8,6 @@ body {
     max-width: 90%;
 }
 
-
-
 .contact {
     margin-left: 2%;
 }
@@ -30,7 +28,7 @@ a:hover {
 a:active { color: rgb(0, 253, 241); }
 h1 {
     color: #f4af5b;
-    font-size: 48px;
+    font-size: 32px;
 
 }
 
