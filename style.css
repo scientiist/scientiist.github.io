@@ -43,6 +43,6 @@ h1 {
   margin-left: 20px;
 }
 
-code {background: white;}
+code {color: rgb(197, 236, 146); font-weight: lighter; font-family: monospace; }
 a {border-bottom: 1px solid #444444; color: #444444; text-decoration: none;}
 a:hover {border-bottom: 0;}
